@@ -36,3 +36,5 @@ await client.query(
 const students = await client.query("SELECT * FROM student");
 
 console.log(students.rows);
+
+await client.end();
