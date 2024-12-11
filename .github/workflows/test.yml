@@ -31,9 +31,14 @@ jobs:
         run: npm ci
 
       - name: Connect to PostgreSQL
-        run: node client.js
+        shell: bash
+        run: |
+          node client.js
         env:
           POSTGRES_HOST: postgres
           POSTGRES_PORT: 5432
+
       - name: Connect to Nginx
-        run: curl nginx
+        shell: bash
+        run: |
+          curl -f http://nginx
